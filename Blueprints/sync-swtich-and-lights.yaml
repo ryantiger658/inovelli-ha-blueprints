@@ -8,35 +8,10 @@ blueprint:
       description: "List of available Inovelli Blue switches."
       selector:
         device:
-          filter:
-          # Support for Inovelli Blue VZM31-SN Light Switch
-            - integration: zha
-              manufacturer: Inovelli
-              model: VZM31-SN
-          # Support for Inovelli Blue VZM35-SN Fan Switch
-            - integration: zha
-              manufacturer: Inovelli
-              model: VZM35-SN
-    switch:
-      name: Device to Syncronize with the Switch
-      description: "List of available dimmer entities."
-      selector:
-        domain: light
-          # # Support for Inovelli Blue VZM35-SN Fan Switch
-          #   - domain: light
-    ## Pressed Once
-    button_1:
-      name: Down paddle pressed
-      description: "Action to run when down paddle is pressed once."
-      default: []
-      selector:
-        action:
-    button_2:
-      name: Up paddle pressed
-      description: "Action to run when up paddle is pressed once."
-      default: []
-      selector:
-        action:
+          entity:
+            filter:
+              - domain_class: switch
+
 mode: queued
 max_exceeded: silent
 variables:
