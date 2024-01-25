@@ -18,8 +18,8 @@ blueprint:
           multiple: false
 mode: queued
 max_exceeded: silent
-variables:
-  device_id: !input "inovelli_switch"
+# variables:
+#   device_id: !input "inovelli_switch"
 trigger:
   - platform: event
     event_type: zha_event
@@ -31,53 +31,4 @@ action:
     data:
       name: 'ZHA'
       message: 'received event: {{ command }}'
-  - choose:
-      ### Button 1 (Down Paddle)
-      - conditions: "{{ command == 'button_1_press' }}"
-        sequence: !input button_1
-      - conditions: "{{ command == 'button_1_hold' }}"
-        sequence: !input button_1_hold
-      - conditions: "{{ command == 'button_1_release' }}"
-        sequence: !input button_1_release
-      - conditions: "{{ command == 'button_1_double' }}"
-        sequence: !input button_1_double
-      - conditions: "{{ command == 'button_1_triple' }}"
-        sequence: !input button_1_triple
-      - conditions: "{{ command == 'button_1_quadruple' }}"
-        sequence: !input button_1_quadruple
-      - conditions: "{{ command == 'button_1_quintuple' }}"
-        sequence: !input button_1_quintuple
-      ### Button 2 (Upper Paddle)
-      - conditions: "{{ command == 'button_2_press' }}"
-        sequence: !input button_2
-      - conditions: "{{ command == 'button_2_hold' }}"
-        sequence: !input button_2_hold
-      - conditions: "{{ command == 'button_2_release' }}"
-        sequence: !input button_2_release
-      - conditions: "{{ command == 'button_2_double' }}"
-        sequence: !input button_2_double
-      - conditions: "{{ command == 'button_2_triple' }}"
-        sequence: !input button_2_triple
-      - conditions: "{{ command == 'button_2_quadruple' }}"
-        sequence: !input button_2_quadruple
-      - conditions: "{{ command == 'button_2_quintuple' }}"
-        sequence: !input button_2_quintuple
-      ### Button 3 (Config Button)
-      - conditions: "{{ command == 'button_3_press' }}"
-        sequence: !input button_3
-      - conditions: "{{ command == 'button_3_hold' }}"
-        sequence: !input button_3_hold
-      - conditions: "{{ command == 'button_3_release' }}"
-        sequence: !input button_3_release
-      - conditions: "{{ command == 'button_3_double' }}"
-        sequence: !input button_3_double
-      - conditions: "{{ command == 'button_3_triple' }}"
-        sequence: !input button_3_triple
-      - conditions: "{{ command == 'button_3_quadruple' }}"
-        sequence: !input button_3_quadruple
-      - conditions: "{{ command == 'button_3_quintuple' }}"
-        sequence: !input button_3_quintuple
-      - conditions: "{{ command == 'on' }}"
-        sequence: !input switch_on
-      - conditions: "{{ command == 'off' }}"
-        sequence: !input switch_off
+  
