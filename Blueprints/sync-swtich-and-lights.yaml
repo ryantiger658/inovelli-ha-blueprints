@@ -17,27 +17,11 @@ blueprint:
             - integration: zha
               manufacturer: Inovelli
               model: VZM35-SN
-    ## Pressed Once
-    button_1:
-      name: Down paddle pressed
-      description: "Action to run when down paddle is pressed once."
-      default: []
-      selector:
-        action:
-    button_2:
-      name: Up paddle pressed
-      description: "Action to run when up paddle is pressed once."
-      default: []
-      selector:
-        action:
     switch:
       name: Device to Syncronize with the Switch
       description: "List of available dimmer entities."
       selector:
-        device:
-          filter:
-          # Support for Inovelli Blue VZM31-SN Light Switch
-            - device_class: switch
+        domain: light
           # # Support for Inovelli Blue VZM35-SN Fan Switch
           #   - domain: light
     ## Pressed Once
